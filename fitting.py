@@ -13,25 +13,30 @@ x_error = data[2]
 y_error = data[3]
 
 
-def my_func(t, a, tau, T, phi):
-    return a*np.exp(-t/tau)*np.cos(2*np.pi*t/T + phi)
+def my_func(t, a, tau):
+    return a*np.exp(-t/tau)
+
+#*np.cos(2*np.pi*t/T + phi)
 
 
 popt, pcov = optimize.curve_fit(my_func, x_data, y_data)
 
+print(popt)
 print(pcov)
 a = popt[0]
 tau = popt[1]
-T = popt[2]
-phi = popt[3]
+#T = popt[2]
+#phi = popt[3]
 u_a = pcov[0, 0] ** 0.5
 u_tau = pcov[1, 1] ** 0.5
-u_T = pcov[2, 2] ** 0.5
-u_phi = pcov[3, 3] ** 0.5
+#u_T = pcov[2, 2] ** 0.5
+#u_phi = pcov[3, 3] ** 0.5
 
 
 def fitfunction(t):
-    return a*np.exp(-t/tau)*np.cos(2*np.pi*t/T+phi)
+    return a*np.exp(-t/tau)
+
+#*np.cos(2*np.pi*t/T+phi)
 
 
 start = min(x_data)
@@ -59,8 +64,8 @@ plt.show()
 
 print("A: ", a, "+/-", u_a)
 print("tau:", tau, "+/-", u_tau)
-print("T:", T, "+/-", u_T)
-print("phi:", phi, "+/-", u_phi)
+#print("T:", T, "+/-", u_T)
+#print("phi:", phi, "+/-", u_phi)
 
 plt.rcParams['figure.figsize'] = (10, 3)
 
