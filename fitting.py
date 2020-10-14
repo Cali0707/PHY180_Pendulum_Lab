@@ -21,8 +21,7 @@ def my_func(t, a, tau):
 
 popt, pcov = optimize.curve_fit(my_func, x_data, y_data)
 
-print(popt)
-print(pcov)
+
 a = popt[0]
 tau = popt[1]
 u_a = pcov[0, 0] ** 0.5
@@ -51,9 +50,9 @@ plt.errorbar(x_data, y_data, yerr=y_error, xerr=x_error, fmt=".")
 
 plt.plot(xs, curve)
 
-plt.xlabel("Time [in seconds]", fontproperties=font)
-plt.ylabel('Angle of Amplitude [in Radians]', fontproperties=font)
-plt.title("Fitted curve of the Amplitude of the pendulum over time", fontproperties=font)
+plt.xlabel("Time [seconds]", fontproperties=font)
+plt.ylabel('Angle of Amplitude [Radians]', fontproperties=font)
+plt.title("Fitted curve of the Amplitude of the Pendulum over Time", fontproperties=font)
 
 plt.show()
 
@@ -72,8 +71,8 @@ plt.errorbar(x_data, residual, yerr=y_error, xerr=x_error, fmt=".")
 
 plt.plot(zerolinex, zeroliney)
 
-plt.xlabel("Time [in seconds]", fontproperties=font)
+plt.xlabel("Time [seconds]", fontproperties=font)
 plt.ylabel("Residuals of the amplitude", fontproperties=font)
-plt.title("Residuals of the fit", fontproperties=font)
+plt.title("Residuals of the fit of Figure 2", fontproperties=font)
 
 plt.show()
