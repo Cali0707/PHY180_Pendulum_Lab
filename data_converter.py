@@ -15,4 +15,11 @@ def convert_degrees_to_radians(file_to_load, file_to_write, x_err, y_err):
     f.close()
 
 
+if __name__ == '__main__':
+    file_to_load = 'lab3_measurements.txt'
+    file_to_write = 'lab3_in_radians.txt'
+    x_err = 0.1
+    y_err = 0.1
+    convert_degrees_to_radians(file_to_load, file_to_write, x_err, y_err)
+
 
