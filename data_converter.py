@@ -3,7 +3,7 @@ import math
 
 
 def convert_degrees_to_radians(file_to_load, file_to_write, x_err, y_err):
-    deg = np.loadtxt(file_to_load, usecols=0, skiprows=1, unpack=True)
+    deg = np.loadtxt(file_to_load, usecols=(0, 1), skiprows=1, unpack=True)
     f = open(file_to_write, 'a')
     f.write('x y dx dy')
     for i in range(len(deg[0])):
