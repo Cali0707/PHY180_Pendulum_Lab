@@ -3,11 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 
-filename = "test_data.txt"
+qfactor_filename = "test_data.txt"
+period_filename = "period_data.txt"
 # change this if filename is different
 
 
-data = np.loadtxt(filename, usecols=(0, 1, 2, 3), skiprows=1, unpack=True)
+data = np.loadtxt(qfactor_filename, usecols=(0, 1, 2, 3), skiprows=1, unpack=True)
 x_data = data[0]
 y_data = data[1]
 x_error = data[2]
